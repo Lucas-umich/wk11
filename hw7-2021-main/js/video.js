@@ -54,3 +54,20 @@ document.querySelector("#mute").addEventListener("click", function() {
     }
     video.mute();
 });
+
+document.querySelector("#slider").addEventListener("input", function() {
+    let volume = this.value;
+    video.volume = volume / 100;
+    document.querySelector("#volume").textContent = volume + "%";
+    console.log("volume set to " + volume + "%");
+});
+
+document.querySelector("#vintage").addEventListener("click", function() {
+    video.classList.add("oldSchool");
+    console.log("styled applied");
+});
+
+document.querySelector("#orig").addEventListener("click", function() {
+    video.classList.remove("oldSchool");
+    console.log("original style restored");
+});
